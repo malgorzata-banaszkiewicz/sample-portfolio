@@ -1,0 +1,5 @@
+.hover-disabled {
+	&.block-contact__checkbox-box::after {
+		background-color: transparent;
+	}
+}

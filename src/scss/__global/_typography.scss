@@ -1,0 +1,22 @@
+h1 {
+	@include font(50, 50, 700);
+	@include media(">=lg") {
+		@include font(60, 75, 700);
+	}
+}
+h2 {
+	@include font(40, 40, 700);
+	margin-bottom: rem(15);
+	@include media(">=lg") {
+		@include font(50, false, 700);
+		line-height: normal;
+	}
+}
+h3 {
+	@include font(25, 30, 700);
+	color: $color-black;
+}
+h4 {
+	@include font(50, 50, 700);
+	margin-bottom: rem(15);
+}

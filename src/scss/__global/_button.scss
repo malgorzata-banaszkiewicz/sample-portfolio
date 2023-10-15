@@ -1,0 +1,14 @@
+.button {
+	border: rem(1) solid $color-azure-radiance;
+	color: $color-azure-radiance;
+	border-radius: rem(50);
+	background-color: $color-white;
+	padding: rem(17) rem(33);
+	@include font(20, false, 600);
+	min-width: rem(80);
+	@include hover-filter();
+	&--filled {
+		background-color: $color-azure-radiance;
+		color: $color-white;
+	}
+}

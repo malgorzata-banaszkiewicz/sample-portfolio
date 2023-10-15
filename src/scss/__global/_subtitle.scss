@@ -1,0 +1,9 @@
+.subtitle {
+	color: $color-azure-radiance;
+	text-transform: uppercase;
+	@include font(16, 18, 600, 1.8);
+	margin-bottom: rem(15);
+	@include media(">=lg") {
+		@include font(20, false, false, 2);
+	}
+}

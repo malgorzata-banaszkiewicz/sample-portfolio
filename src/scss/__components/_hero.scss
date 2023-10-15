@@ -1,0 +1,87 @@
+.block-hero {
+	&__content {
+		margin: rem(30) 0;
+		text-align: center;
+		@include media(">=xxl") {
+			display: flex;
+			flex-direction: row-reverse;
+			gap: 10%;
+			text-align: start;
+			align-items: center;
+		}
+	}
+	&__right {
+		@include media(">=xxl") {
+			flex-basis: 45%;
+			max-width: 45%;
+		}
+	}
+	&__image {
+		max-width: rem(320);
+		display: block;
+		margin: 0 auto rem(15);
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		@include media(">=xxl") {
+			max-width: rem(520);
+			margin: 0;
+		}
+	}
+	&__left {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		@include media(">=xxl") {
+			align-items: flex-start;
+			justify-content: flex-start;
+			flex-basis: 45%;
+			max-width: 45%;
+		}
+	}
+	&__greeting {
+		@include font(20, false, 600);
+		@include media(">=xxl") {
+			font-size: rem(25);
+		}
+	}
+	&__title {
+		margin: rem(15) 0;
+		@include media(">=xxl") {
+		}
+	}
+	&__text {
+		@include font(20, 20, 400);
+		margin-bottom: rem(30);
+		@include media(">=xxl") {
+			font-size: rem(25);
+		}
+	}
+	&__buttons {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: stretch;
+		width: 100%;
+		@include media(">=xxl") {
+			flex-direction: row;
+			gap: rem(44);
+		}
+	}
+	&__button-filled {
+		width: 100%;
+		margin-bottom: rem(15);
+		@include media(">=xxl") {
+			width: fit-content;
+		}
+	}
+	&__button-outlined {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: rem(15);
+	}
+}

@@ -1,0 +1,24 @@
+.block-logos {
+	background-color: $color-alabaster;
+	&__content {
+		padding: rem(40) 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: rem(20);
+		@include media(">=xxl") {
+			flex-direction: row;
+			gap: 0;
+			padding: rem(65) 0;
+		}
+	}
+	&__logo {
+		@include hover-filter-half();
+		height: rem(50);
+	}
+	&__img {
+		height: 100%;
+		object-fit: cover;
+	}
+}

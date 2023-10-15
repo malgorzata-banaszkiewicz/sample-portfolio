@@ -1,0 +1,46 @@
+.block-milestones {
+	background-color: $color-azure-radiance;
+	@include media(">=xxl") {
+		background-image: url("../images/icons/x&o.png");
+		background-repeat: no-repeat;
+		background-position: right top;
+	}
+	h2 {
+		color: $color-white;
+		margin-bottom: rem(60);
+		@include media(">=xxl") {
+			max-width: 53%;
+		}
+	}
+	&__subtitle {
+		color: $color-zumthor;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: rem(30) rem(30) rem(60);
+		@include media(">=xxl") {
+			padding: rem(100) 0;
+		}
+	}
+	&__milestones-box {
+		display: flex;
+		flex-direction: column;
+		gap: rem(30);
+		@include media(">=xxl") {
+			flex-direction: row;
+			margin-bottom: rem(50);
+		}
+	}
+	&__milestone {
+		background-color: $color-white;
+		border-radius: rem(15);
+		padding: rem(20);
+	}
+	&__text {
+		@include font(20, false, 600);
+	}
+}

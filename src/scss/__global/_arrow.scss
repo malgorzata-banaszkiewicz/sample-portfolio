@@ -1,0 +1,11 @@
+.arrow {
+	@include arrowButton();
+	&-img {
+		position: absolute;
+		object-fit: cover;
+		width: 70%;
+		height: 70%;
+		top: 15%;
+		left: 18%;
+	}
+}

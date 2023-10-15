@@ -1,0 +1,86 @@
+.main-footer {
+	background-color: $color-azure-radiance;
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: rem(30) 0;
+		color: $color-white;
+		@include media(">=xxl") {
+			flex-direction: row;
+			justify-content: space-between;
+			padding: rem(50) 0;
+			align-items: center;
+		}
+	}
+	&__logo-rights {
+		display: flex;
+		gap: rem(15);
+		flex-direction: column;
+		align-items: center;
+		@include media(">=xxl") {
+			flex-direction: row;
+			gap: rem(30);
+		}
+	}
+	&__logo {
+		display: flex;
+		gap: rem(6);
+		align-items: center;
+		justify-content: center;
+		@include hover-filter();
+		@include media(">=xxl") {
+			margin-bottom: 0;
+		}
+	}
+	&__baloon-box {
+		background-color: $color-white;
+		padding: rem(7.5);
+		border-radius: 50%;
+		width: rem(50);
+		height: rem(50);
+		text-align: center;
+		position: relative;
+	}
+	&__baloon {
+		@include baloon();
+	}
+	&__company {
+		@include font(25, 25, 900, false, false, $font-zen-kaku);
+	}
+	&__copyrights {
+		@include font(15, 15, 400);
+		margin-bottom: rem(30);
+		@include media(">=xxl") {
+			margin-bottom: 0;
+			color: $color-jordy-blue;
+		}
+	}
+	&__social-box {
+		display: flex;
+		gap: rem(8);
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		@include font(18, 18, 600);
+		@include media(">=xxl") {
+			width: max-content;
+			color: $color-jordy-blue;
+		}
+	}
+	&__icon-link {
+		@include hover-filter();
+		width: rem(30);
+		height: rem(30);
+	}
+	&__icon-box {
+		line-height: 1;
+	}
+	&__icon {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+}
