@@ -6,7 +6,7 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: rem(8) 0;
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			padding: rem(35) 0 rem(28);
 		}
 	}
@@ -16,31 +16,31 @@
 		align-items: center;
 		@include hover-filter();
 	}
-	&__baloon-box {
+	&__logo-image {
 		background-color: $color-azure-radiance;
 		width: rem(30);
 		height: rem(30);
 		border-radius: 50%;
 		text-align: center;
 		position: relative;
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			width: rem(50);
 			height: rem(50);
 		}
 	}
 	&__baloon {
-		@include baloon();
+		@include logo-image-settings();
 	}
 	&__company {
 		display: block;
 		@include font(20, false, 900, false, false, $font-zen-kaku);
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			@include font(25, 25);
 		}
 	}
 	&__nav {
 		display: none;
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			display: block;
 		}
 		&--open {
@@ -63,7 +63,7 @@
 			#{$header}__nav-list {
 				display: flex;
 				flex-direction: column;
-				padding: calc(var(--headerHeight) / 2);
+				padding: rem(60);
 				gap: rem(50);
 				justify-content: space-evenly;
 				align-items: center;
@@ -77,11 +77,13 @@
 		@include font(18, 24, 600);
 		list-style: none;
 		color: $color-mine-shaft;
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
 			gap: rem(40);
+			flex-wrap: wrap;
+			max-width: rem(775);
 		}
 	}
 	&__nav-link {
@@ -89,7 +91,7 @@
 	}
 	&__button {
 		display: none;
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			display: block;
 		}
 	}
@@ -103,15 +105,15 @@
 		right: 0;
 		z-index: 9999;
 		transform: translateY(-50%);
-		transition: background-color $default-transition-speed;
+		transition: background-color $default-transition;
 		@include media(">=md") {
 			right: rem(20);
 		}
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			display: none;
 		}
 
-		.header__btn-hamburger {
+		.header__hamburger-btn {
 			display: block;
 			flex-grow: 0;
 			flex-shrink: 0;
@@ -140,7 +142,8 @@
 				position: absolute;
 				left: 0;
 				transform: rotate(0deg);
-				transition: 0.2s ease-in-out;
+				transition: transform $default-transition, width $default-transition,
+					top $default-transition;
 				background: $color-black;
 				border-radius: rem(5);
 				@include media(">=md") {
@@ -176,7 +179,7 @@
 		&.open {
 			span:nth-child(1) {
 				top: 50%;
-				left: rem(-8);
+				left: rem(-3);
 				width: rem(24);
 				transform: rotate(45deg);
 				transform-origin: top;
@@ -189,7 +192,7 @@
 
 			span:nth-child(3) {
 				top: 50%;
-				left: rem(-10);
+				left: rem(-5);
 				width: rem(24);
 				transform: rotate(-45deg);
 				transform-origin: top;

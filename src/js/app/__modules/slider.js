@@ -1,98 +1,205 @@
 const arrowPrev = document.querySelector(".arrow--prev");
 const arrowNext = document.querySelector(".arrow--next");
-const arrowNextImg = document.querySelector(".arrow--next .arrow-img");
-const arrowPrevImg = document.querySelector(".arrow--prev .arrow-img");
 let more = ".block-services__more";
 let icon = ".block-services__icon";
-let moreActive = "block-services__more--active";
-let active = "active";
+let active = "active-blue-class";
 let dataSlide = "data-slide";
 let box = document.querySelector(".block-services__service-boxes");
-let breakpoint = 992;
+let breakpoint = 993;
 let margin = window.innerWidth > breakpoint ? "-230px" : "0";
+let desktopSlides = window.innerWidth > breakpoint;
+let slides = document.querySelectorAll(".block-services__service-box");
+let totalSlides = slides.length;
+let activeSlideNumber = 1;
+let selectedArticle = document.querySelector("article.active-blue-class");
 
 const deactivateSlider = () => {
-	let selectedArticle = document.querySelector("article.active");
+	selectedArticle = document.querySelector("article.active-blue-class");
 	let childText = selectedArticle.querySelector(more);
 	let childIcon = selectedArticle.querySelector(icon);
 	selectedArticle.classList.remove(active);
-	childText.classList.remove(moreActive);
+	childText.classList.remove(active);
 	childIcon.src = "images/icons/front-development-blue.svg";
 };
 
 const activateSlider = (slideNumber) => {
 	deactivateSlider();
-	let selectedArticle = document.querySelector(`[data-slide="${slideNumber}"]`);
-	document;
+	let selectedArticle = document.querySelector(
+		`[${dataSlide}="${slideNumber}"]`
+	);
 	let childText = selectedArticle.querySelector(more);
 	let childIcon = selectedArticle.querySelector(icon);
 	selectedArticle.classList.add(active);
-	childText.classList.add(moreActive);
+	childText.classList.add(active);
 	childIcon.src = "images/icons/front-development.svg";
 };
 
-export const nextSlide = () => {
+const nextSlide = () => {
 	arrowNext.addEventListener("click", () => {
 		arrowPrev.classList.remove(active);
 		arrowNext.classList.add(active);
-		arrowNextImg.src = "images/icons/right-arrow-white.svg";
-		arrowPrevImg.src = "images/icons/left-arrow-blue.svg";
-		let activeSlide = document.querySelector("article.active");
-		let activeSlideNumber = activeSlide.getAttribute(dataSlide);
-		if (activeSlideNumber == 4) {
+		activeSlideNumber++;
+		if (activeSlideNumber === totalSlides) {
+			slides.forEach((slide) => {
+				box.style.marginRight = "0";
+				console.log("ostatni slide");
+				let attribute = slide.getAttribute(dataSlide);
+				if (
+					attribute == totalSlides - 2 ||
+					attribute == totalSlides - 1 ||
+					attribute == totalSlides
+				) {
+					slide.style.display = "flex";
+				} else {
+					slide.style.display = "none";
+				}
+			});
+		} else if (activeSlideNumber > totalSlides) {
 			activeSlideNumber = 1;
 			box.style.marginRight = margin;
-			box.style.marginLeft = "0";
-		} else if (activeSlideNumber == 3) {
-			box.style.marginLeft = margin;
-			box.style.marginRight = "0";
-			activeSlideNumber++;
-		} else {
-			box.style.marginRight = margin;
-			activeSlideNumber++;
+			slides.forEach((slide) => {
+				let attribute = slide.getAttribute(dataSlide);
+				if (attribute <= (desktopSlides ? 4 : 3)) {
+					slide.style.display = "flex";
+				} else {
+					slide.style.display = "none";
+				}
+			});
+		} else if (
+			activeSlideNumber >= (desktopSlides ? 4 : 3) &&
+			activeSlideNumber < totalSlides
+		) {
+			slides.forEach((slide) => {
+				let attribute = slide.getAttribute(dataSlide);
+				let number = desktopSlides ? -2 : -1;
+				if (
+					attribute < activeSlideNumber + number ||
+					attribute > activeSlideNumber + 1
+				) {
+					slide.style.display = "none";
+				} else {
+					slide.style.display = "flex";
+				}
+			});
 		}
 		activateSlider(activeSlideNumber);
 	});
 };
 
-export const prevSlide = () => {
+const prevSlide = () => {
 	arrowPrev.addEventListener("click", () => {
 		arrowNext.classList.remove(active);
 		arrowPrev.classList.add(active);
-		arrowNextImg.src = "images/icons/right-arrow-blue.svg";
-		arrowPrevImg.src = "images/icons/left-arrow-white.svg";
-		let activeSlide = document.querySelector("article.active");
-		let activeSlideNumber = activeSlide.getAttribute(dataSlide);
-		if (activeSlideNumber == 1) {
-			activeSlideNumber = 4;
-			box.style.marginLeft = margin;
-			box.style.marginRight = "0";
-		} else if (activeSlideNumber == 2) {
+		activeSlideNumber--;
+		if (activeSlideNumber < 1) {
+			activeSlideNumber = totalSlides;
+			slides.forEach((slide) => {
+				box.style.marginRight = "0";
+				console.log("ostatni slide");
+				let attribute = slide.getAttribute(dataSlide);
+				if (
+					attribute == totalSlides - 2 ||
+					attribute == totalSlides - 1 ||
+					attribute == totalSlides
+				) {
+					slide.style.display = "flex";
+				} else {
+					slide.style.display = "none";
+				}
+			});
+		} else if (activeSlideNumber <= totalSlides - 1 && activeSlideNumber > 2) {
 			box.style.marginRight = margin;
-			box.style.marginLeft = "0";
-			activeSlideNumber--;
-		} else {
+			console.log("przedostatni slajd");
+			slides.forEach((slide) => {
+				let attribute = slide.getAttribute(dataSlide);
+				let number = desktopSlides ? -2 : null;
+				if (
+					attribute == activeSlideNumber ||
+					attribute == activeSlideNumber + 1 ||
+					attribute == activeSlideNumber - 1 ||
+					attribute == activeSlideNumber + number
+				) {
+					slide.style.display = "flex";
+				} else {
+					slide.style.display = "none";
+				}
+			});
+		} else if (activeSlideNumber === 2) {
 			box.style.marginRight = margin;
-			box.style.marginLeft = "0";
-			activeSlideNumber--;
+			("drugi slajd");
+			slides.forEach((slide) => {
+				let attribute = slide.getAttribute(dataSlide);
+				let number = desktopSlides ? 2 : null;
+				if (
+					attribute == activeSlideNumber ||
+					attribute == activeSlideNumber - 1 ||
+					attribute == activeSlideNumber + 1 ||
+					attribute == activeSlideNumber + number
+				) {
+					slide.style.display = "flex";
+				} else {
+					slide.style.display = "none";
+				}
+			});
 		}
 		activateSlider(activeSlideNumber);
+	});
+};
+
+const mobileView = () => {
+	slides.forEach((slide) => {
+		let attribute = slide.getAttribute(dataSlide);
+		if (attribute <= (desktopSlides ? 4 : 3)) {
+			slide.style.display = "flex";
+			desktopSlides
+				? (box.style.marginRight = "-230px")
+				: (box.style.marginRight = "0");
+		} else {
+			slide.style.display = "none";
+		}
 	});
 };
 
 export const sliderOnResize = (e) => {
-	if (e.currentTarget.innerWidth > breakpoint) {
-		let activeSlide = document.querySelector("article.active");
-		let activeSlideNumber = activeSlide.getAttribute(dataSlide);
-		if (activeSlideNumber == 1) {
+	if (!slides.length) {
+		console.log(slides);
+		return null;
+	} else {
+		activateSlider(1);
+		activeSlideNumber = 1;
+		if (e.currentTarget.innerWidth > breakpoint) {
 			box.style.marginRight = "-230px";
-			box.style.marginLeft = "0";
-		} else if (activeSlideNumber == 4) {
+			slides.forEach((slide) => {
+				let attribute = slide.getAttribute(dataSlide);
+				if (attribute <= 4) {
+					slide.style.display = "flex";
+				} else {
+					slide.style.display = "none";
+				}
+			});
+		} else if (e.currentTarget.innerWidth < breakpoint) {
 			box.style.marginRight = "0";
-			box.style.marginLeft = "-230px";
+			slides.forEach((slide) => {
+				let attribute = slide.getAttribute(dataSlide);
+				if (attribute <= 3) {
+					slide.style.display = "flex";
+				} else {
+					slide.style.display = "none";
+				}
+			});
 		}
-	} else if (e.currentTarget.innerWidth < breakpoint) {
-		box.style.marginRight = "0";
-		box.style.marginLeft = "0";
+	}
+};
+
+export const sliderArrows = (e) => {
+	if (!slides.length) {
+		let arrows = document.querySelector(".block-services__arrows");
+		arrows.style.display = "none";
+		return null;
+	} else {
+		mobileView();
+		nextSlide();
+		prevSlide();
+		sliderOnResize(e);
 	}
 };

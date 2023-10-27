@@ -1,7 +1,7 @@
 .block-projects {
 	h2 {
 		margin-bottom: rem(30);
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			max-width: 52%;
 			margin-bottom: rem(50);
 		}
@@ -20,7 +20,7 @@
 		flex-wrap: wrap;
 		gap: rem(10) rem(15);
 		margin-bottom: rem(30);
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			gap: rem(24);
 			margin-bottom: rem(50);
 		}
@@ -28,7 +28,7 @@
 	&__button {
 		padding: rem(5) rem(10);
 		@include font(15, 15, 600);
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			padding: rem(17) rem(33);
 		}
 	}
@@ -37,11 +37,15 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 		gap: rem(30);
-		@include media(">=lg") {
+		@include media(">=md") {
 			flex-direction: row;
 			flex-wrap: wrap;
+			gap: rem(40);
+		}
+		@include media(">=xxl") {
+			gap: rem(60);
 		}
 	}
 	&__blog-link {

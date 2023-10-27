@@ -1,34 +1,29 @@
-import { mobileMenu, vhUnit, headerOnResize } from "../__modules/mobile-menu";
-import { checkboxChecked } from "../__modules/checkbox-checked";
-import { checkboxHover } from "../__modules/checkbox-hover";
-import { nextSlide, prevSlide, sliderOnResize } from "../__modules/slider";
-import { titleAnimation } from "../__modules/title-animation";
+import { headerChanges, headerOnResize } from "../__modules/mobile-menu";
+import { InitializeMovingTitles } from "../__modules/title-animation";
 import { slickSlider } from "../__modules/slick-slider";
-import { aboutMe } from "../__modules/about-me";
-import { projects } from "../__modules/projects";
-import { milestones } from "../__modules/milestones";
-import { validateForm } from "../__modules/contact-form";
+import { countersOnScroll } from "../__modules/milestones";
+import { checkboxChecked, checkboxHover } from "../__modules/contact-form";
+import { smoothAnchor } from "../__modules/smoothAnchor";
+import { tabs } from "../__modules/tabs";
+import { sliderArrows, sliderOnResize } from "../__modules/slider";
 
 // GLOBAL APP CONTROLLER
 const controller = {
 	init() {},
 	loaded(e) {
-		mobileMenu();
-		vhUnit();
+		headerChanges.init();
 		checkboxChecked();
 		checkboxHover();
-		nextSlide();
-		prevSlide();
-		titleAnimation();
+		InitializeMovingTitles();
 		slickSlider();
-		aboutMe();
-		projects();
-		milestones();
-		validateForm(e);
+		countersOnScroll();
+		smoothAnchor(e);
+		tabs();
+		sliderArrows(e);
 	},
 	resized(e) {
 		headerOnResize(e);
-		vhUnit();
+		headerChanges.vhUnit();
 		sliderOnResize(e);
 	},
 	mouseUp(e) {},

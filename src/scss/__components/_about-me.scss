@@ -24,7 +24,6 @@
 		object-fit: cover;
 		width: 100%;
 		height: 100%;
-		cursor: pointer;
 		@include media(">=xxl") {
 			margin-bottom: 0;
 		}
@@ -49,6 +48,7 @@
 		width: 100%;
 		gap: rem(15);
 		margin-bottom: rem(30);
+		flex-wrap: wrap;
 		@include media(">=xxl") {
 			flex-direction: row;
 			gap: rem(25);
@@ -57,15 +57,25 @@
 	}
 	&__button-filled {
 		width: 100%;
+		@include media(">=xxl") {
+			width: max-content;
+		}
 	}
 	&__button-outlined {
 		width: 100%;
+		@include media(">=xxl") {
+			width: max-content;
+		}
+	}
+	&__tab-content {
+		display: none;
+		&--active {
+			display: block;
+		}
 	}
 	&__progress-bars {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		text-align: start;
+		max-height: rem(250);
+		overflow: auto;
 	}
 	&__progress-bar {
 		width: 100%;
@@ -100,9 +110,7 @@
 		background-color: $color-azure-radiance;
 		border-radius: rem(10);
 	}
-	&__awards {
-		display: none;
-	}
+
 	&__awards-list {
 		list-style: none;
 		counter-reset: about-me;

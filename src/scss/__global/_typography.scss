@@ -20,3 +20,16 @@ h4 {
 	@include font(50, 50, 700);
 	margin-bottom: rem(15);
 }
+.highlighted {
+	color: $color-azure-radiance;
+	display: block;
+}
+.subtitle {
+	color: $color-azure-radiance;
+	text-transform: uppercase;
+	@include font(16, 18, 600, 1.8);
+	margin-bottom: rem(15);
+	@include media(">=lg") {
+		@include font(20, false, false, 2);
+	}
+}

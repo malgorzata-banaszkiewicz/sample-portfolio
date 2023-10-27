@@ -1,0 +1,27 @@
+.arrow {
+	@include arrowButton();
+}
+.arrow-img {
+	position: absolute;
+	object-fit: cover;
+	width: 70%;
+	height: 70%;
+	top: 15%;
+	left: 18%;
+}
+
+.active-blue-class {
+	background-color: $color-azure-radiance;
+	color: $color-white;
+	z-index: 1;
+	fill: $color-white;
+	h3 {
+		color: $color-white;
+	}
+	.block-services__more {
+		color: $color-white;
+	}
+	& svg path {
+		fill: $color-white;
+	}
+}

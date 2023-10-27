@@ -1,7 +1,7 @@
 .block-contact {
 	$block: &;
 	background-color: $color-azure-radiance;
-	@include media(">=xxl") {
+	@include media(">=xl") {
 		background-image: url("../images/icons/circle.png"),
 			url("../images/icons/small-circle.png");
 		background-repeat: no-repeat;
@@ -9,13 +9,13 @@
 	}
 	h2 {
 		color: $color-white;
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			margin-bottom: rem(70);
 		}
 	}
 	&__subtitle {
 		color: $color-zumthor;
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			margin-bottom: rem(24);
 		}
 	}
@@ -26,12 +26,12 @@
 		justify-content: center;
 		text-align: center;
 		padding: rem(30) 0;
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			padding: rem(100) 0;
 		}
 	}
 	&__contact-box {
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			display: flex;
 			gap: 3%;
 			padding: 0 rem(109);
@@ -44,31 +44,30 @@
 		padding: rem(20) rem(20) rem(30);
 		text-align: start;
 		margin-bottom: rem(30);
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			height: min-content;
 			padding: rem(30);
 			width: 48.5%;
+			min-width: fit-content;
 			flex-basis: 48.5%;
 			margin-bottom: 0;
 		}
 	}
 	&__action {
-		width: fit-content;
 		@include hover-animated-lines-blue();
 	}
 	&__hotline {
 		display: inline-block;
-		width: fit-content;
 		@include font(16, 20, 700);
 		margin-bottom: rem(25);
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			margin-bottom: rem(40);
 		}
 	}
 	&__hotline-number {
 		display: block;
 		@include font(20, 30, 700);
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			font-size: rem(24);
 		}
 	}
@@ -81,35 +80,30 @@
 	&__form {
 		width: 100%;
 		text-align: start;
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			width: 48.5%;
 			flex-basis: 48.5%;
 		}
 	}
 	&__identity-inputs {
 		border: none;
-		padding: 0;
 		display: flex;
 		flex-direction: column;
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			flex-direction: row;
 			gap: 4%;
 		}
 	}
-	&__identity-input-box {
-		@include media(">=xxl") {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			max-width: 48%;
-			flex-basis: 48%;
-		}
+	&__required-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 	&__error-message {
 		color: $color-white;
-		text-decoration: underline red;
-		height: rem(24);
+		text-decoration: underline $color-red;
+		visibility: hidden;
 		font-size: rem(10);
 	}
 	&__input {
@@ -120,6 +114,7 @@
 		color: $color-dove-gray;
 		@include font(16, 20, 400);
 		border-radius: rem(5);
+		transition: border-color $default-transition;
 		&:hover {
 			border-color: $color-congress-blue;
 		}
@@ -132,10 +127,8 @@
 	&__checkbox-box {
 		display: flex;
 		justify-content: center;
-		align-items: center;
-		margin-bottom: rem(15);
-		min-width: rem(250);
-		position: absolute;
+		align-items: flex-start;
+		position: relative;
 		gap: rem(3);
 		&::after {
 			content: "";
@@ -143,12 +136,12 @@
 			opacity: 0;
 			width: rem(1);
 			height: rem(1);
-			transition: transform 0.3s linear, opacity 0.3s;
+			transition: transform $default-transition, opacity $default-transition;
 			border-radius: 50%;
 			overflow: hidden;
 			position: absolute;
-			left: 2.1%;
-			top: 24%;
+			left: 2%;
+			top: 15%;
 			transform: translateY(-50%);
 			background-color: $color-white;
 			cursor: pointer;
@@ -192,10 +185,10 @@
 			border-radius: rem(5);
 			left: 0;
 			top: 25%;
-			transform: translateY(-50%);
+			transform: translateY(-80%);
 			position: absolute;
 		}
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			padding-left: rem(38);
 		}
 	}
@@ -211,9 +204,28 @@
 		color: $color-white;
 		padding: rem(15) rem(33);
 		width: 100%;
-		margin-top: rem(40);
-		@include media(">=xxl") {
-			width: max-content;
+		@include media(">=xl") {
+			width: unset;
 		}
 	}
+	&__thanks-box {
+		display: none;
+		&--active {
+			display: block;
+			height: min-content;
+			padding: rem(20) rem(20) rem(30);
+			border-radius: rem(15);
+			border: rem(2) solid $color-white;
+			color: $color-white;
+		}
+	}
+}
+.hover-disabled {
+	&.block-contact__checkbox-box::after {
+		background-color: transparent;
+	}
+}
+.input-error {
+	border-color: red;
+	color: red;
 }

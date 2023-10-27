@@ -1,6 +1,6 @@
 .block-services {
-	$block: &;
-	.important {
+	overflow: hidden;
+	.highlighted {
 		display: inline;
 	}
 	&__content {
@@ -11,7 +11,7 @@
 		text-align: center;
 	}
 	&__heading-text {
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			max-width: 51%;
 		}
 	}
@@ -25,16 +25,18 @@
 		display: grid;
 		grid-template-areas: "overlap";
 		margin: 0;
-		@include media(">=lg") {
+		@include media(">=md") {
 			display: flex;
 			flex-direction: row;
 			gap: rem(10);
 			flex-wrap: nowrap;
-			overflow: hidden;
 			justify-content: flex-start;
+			overflow: hidden;
+		}
+		@include media(">=lg") {
 			margin-right: rem(-230);
 		}
-		@include media(">=xxl") {
+		@include media(">=xl") {
 			gap: rem(30);
 		}
 	}
@@ -47,7 +49,6 @@
 		align-items: flex-start;
 		text-align: start;
 		gap: rem(10);
-		max-width: rem(300);
 		grid-area: overlap;
 		@include media(">=lg") {
 			max-width: 30%;
@@ -62,9 +63,17 @@
 	}
 	&__more {
 		color: $color-azure-radiance;
+		display: flex;
+		gap: rem(10);
 		@include hover-animated-lines-blue();
-		&#{$block}__more--active {
-			color: $color-white;
-		}
+	}
+	&__arrow-box {
+		display: inline-block;
+		width: rem(25);
+		height: rem(28);
+	}
+	&__arrow {
+		width: 100%;
+		height: 100%;
 	}
 }

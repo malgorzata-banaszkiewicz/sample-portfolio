@@ -1,58 +1,51 @@
-export const milestones = () => {
-	const counters = [
-		{
-			start: 8250,
-			stop: 8300,
-			step: 1,
-			selector: "[data-first-counter]",
-			suffix: "+",
-		},
-		{
-			start: 50,
-			stop: 100,
-			step: 1,
-			selector: "[data-second-counter]",
-			suffix: "%",
-		},
-		{
-			start: 0,
-			stop: 3.6,
-			step: 0.1,
-			selector: "[data-third-counter]",
-			suffix: "K",
-		},
-		{
-			start: 190,
-			stop: 240,
-			step: 1,
-			selector: "[data-fourth-counter]",
-			suffix: "+",
-		},
-	];
+const milestonesBox = document.querySelector(
+	".block-milestones__milestones-box"
+);
+const milestones = document.querySelectorAll(".block-milestones__milestone h4");
 
-	let intervals = [];
+const countersInterval = (stop, milestone) => {
+	let start = 0;
+	const interval = setInterval(() => {
+		// Extract the text before and after the numeric part
+		const parts = milestone.textContent.match(/(.*?)(\d+)(.*)/);
 
-	function startCounters() {
-		intervals = counters.map(({ start, stop, step, selector, suffix }) => {
-			let current = start;
-			return setInterval(function () {
-				if (selector === "[data-third-counter]") {
-					$(selector).text(`${current.toFixed(1)}${suffix}`);
-				} else {
-					$(selector).text(`${current.toFixed(0)}${suffix}`);
-				}
-				current += step;
-				if (current > stop) {
-					clearInterval(this);
-					current = stop;
-				}
-			}, 100);
-		});
+		if (parts) {
+			const beforeText = parts[1];
+			const afterText = parts[3];
+
+			milestone.textContent = `${beforeText}${start}${afterText}`;
+			start++;
+
+			if (start > stop) {
+				clearInterval(interval);
+			}
+		}
+	}, 300);
+};
+
+const counters = () => {
+	milestones.forEach((milestone) => {
+		let milestoneText = milestone.textContent;
+		let stop = parseInt(milestoneText.match(/\d+/)[0], 10);
+		countersInterval(stop, milestone);
+	});
+};
+
+export const countersOnScroll = () => {
+	if (!milestonesBox) {
+		return null;
+	} else {
+		const steps = 70.0;
+		createObserver();
 	}
+};
 
-	function stopCounters() {
-		intervals.forEach((interval) => clearInterval(interval));
-	}
-
-	$(".block-milestones").hover(startCounters, stopCounters);
+const createObserver = () => {
+	let options = {
+		root: null,
+		rootMargin: "0px",
+		threshold: 1,
+	};
+	let observer = new IntersectionObserver(counters, options);
+	observer.observe(milestonesBox);
 };

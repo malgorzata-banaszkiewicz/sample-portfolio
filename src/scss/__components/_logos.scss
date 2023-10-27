@@ -7,15 +7,17 @@
 		align-items: center;
 		justify-content: center;
 		gap: rem(20);
-		@include media(">=xxl") {
+		flex-wrap: wrap;
+		@include media(">=xl") {
 			flex-direction: row;
-			gap: 0;
+			flex-wrap: wrap;
 			padding: rem(65) 0;
 		}
 	}
 	&__logo {
 		@include hover-filter-half();
 		height: rem(50);
+		width: 18%;
 	}
 	&__img {
 		height: 100%;

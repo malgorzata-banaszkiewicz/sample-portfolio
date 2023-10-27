@@ -1,6 +1,12 @@
+import $ from "jquery";
+import "slick-carousel";
+
 export const slickSlider = () => {
-	$(document).ready(function () {
-		$(".block-testimonials__opinions").slick({
+	let opinions = $(".block-testimonials__opinions");
+	if (!opinions) {
+		return null;
+	} else {
+		opinions.slick({
 			dots: false,
 			slidesToShow: 4,
 			slidesToScroll: 1,
@@ -22,5 +28,5 @@ export const slickSlider = () => {
 				},
 			],
 		});
-	});
+	}
 };

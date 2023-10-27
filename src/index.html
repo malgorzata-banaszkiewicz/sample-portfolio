@@ -6,30 +6,16 @@
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1" />
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-		<script
-			type="text/javascript"
-			src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script
-			type="text/javascript"
-			src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	</head>
 	<body class="body">
-		<header>
+		<header class="header">
 			<div class="container">
 				<div class="header__content">
 					<a
 						href="/"
 						target="_self"
 						class="header__logo">
-						<figure class="header__baloon-box">
+						<figure class="header__logo-image">
 							<img
 								src="./images/icons/air-balloon-white.svg"
 								alt="baloon"
@@ -87,7 +73,7 @@
 						Let’s chat
 					</a>
 					<div class="header__hamburger">
-						<button class="header__btn-hamburger">
+						<button class="header__hamburger-btn">
 							<span></span>
 							<span></span>
 							<span></span>
@@ -109,7 +95,7 @@
 						<div class="block-hero__left">
 							<p class="block-hero__greeting">Welcome to my Portfolio</p>
 							<h1 class="block-hero__title">
-								Hi I’m<span class="important"> Robert Junior </span>Product
+								Hi I’m<a href="#" target="_blank" rel="noopener" class="highlighted highlighted-on-the-move"> Robert Junior </a>Product
 								Designer
 							</h1>
 							<p class="block-hero__text">
@@ -123,18 +109,17 @@
 									Hire Me!
 								</a>
 								<a
-									href="cv.pdf"
+									href="./images/files/sample.pdf"
 									target="_blank"
 									rel="noopener"
-									><button
-										class="button button--outlined block-hero__button-outlined">
+									download
+									class="button button--outlined block-hero__button-outlined"
+									>
 										Download CV
-										<figure>
 											<img
 												src="./images/icons/icon-download.svg"
 												alt="download icon" />
-										</figure></button
-								></a>
+</a>
 							</div>
 						</div>
 					</div>
@@ -190,7 +175,7 @@
 						<div class="block-about-me__right">
 							<p class="subtitle">About Me</p>
 							<h2>
-								<span class="important">20 Year’s Experience</span> on Product
+								<a href="#" target="_blank" rel="noopener" class="highlighted highlighted-on-the-move">20 Year’s Experience</a> on Product
 								Design
 							</h2>
 							<p class="block-about-me__text">
@@ -201,25 +186,25 @@
 							</p>
 							<div class="block-about-me__buttons">
 								<button
-									class="button button--filled block-about-me__button-filled">
+									class="button button--filled block-about-me__button-filled" data-tab="button" data-open='1'>
 									Main Skills
 								</button>
-								<button class="button block-about-me__button-outlined">
+								<button class="button block-about-me__button-outlined" data-tab="button" data-open='2'>
 									Awards
 								</button>
-								<button class="button block-about-me__button-outlined">
+								<button class="button block-about-me__button-outlined" data-tab="button" data-open='3'>
 									Education
 								</button>
 							</div>
-							<div class="block-about-me__progress-bars">
+							<div class="block-about-me__tab-content block-about-me__tab-content--active block-about-me__progress-bars" data-block='1' data-start>
 								<div class="block-about-me__progress-bar">
 									<label
-										for="ui/ux"
+										for="ui-ux"
 										class="block-about-me__progress-label">
 										User Experience Design - UI/UX
 									</label>
 									<progress
-										id="ui/ux"
+										id="ui-ux"
 										value="95"
 										max="100"
 										class="block-about-me__progress">
@@ -228,12 +213,12 @@
 								</div>
 								<div class="block-about-me__progress-bar">
 									<label
-										for="web&user"
+										for="web-user"
 										class="block-about-me__progress-label">
 										Web & User Interface Design
 									</label>
 									<progress
-										id="web&user"
+										id="web-user"
 										value="90"
 										max="100"
 										class="block-about-me__progress">
@@ -255,31 +240,79 @@
 									</progress>
 								</div>
 							</div>
-							<div class="block-about-me__awards">
-								<ol class="block-about-me__awards-list">
-									<li class="block-about-me__award">iF Design Award 2001</li>
-									<li class="block-about-me__award">iF Design Award 2002</li>
-									<li class="block-about-me__award">iF Design Award 2003</li>
-								</ol>
+							<div class="block-about-me__tab-content" data-block='2'>
+								<div class="block-about-me__progress-bar">
+									<label
+										for="ui-ux"
+										class="block-about-me__progress-label">
+										User Experience Design - UI/UX
+									</label>
+									<progress
+										id="ui-ux"
+										value="95"
+										max="100"
+										class="block-about-me__progress">
+										95%
+									</progress>
+								</div>
+								<div class="block-about-me__progress-bar">
+									<label
+										for="web-user"
+										class="block-about-me__progress-label">
+										Web & User Interface Design
+									</label>
+									<progress
+										id="web-user"
+										value="90"
+										max="100"
+										class="block-about-me__progress">
+										90%
+									</progress>
+								</div>
 							</div>
-							<div class="block-about-me__education">
-								<ol class="block-about-me__education-list">
-									<li class="block-about-me__education-list-item">
-										Art in design bootcamp
-									</li>
-									<li class="block-about-me__education-list-item">
-										Design masters classes
-									</li>
-									<li class="block-about-me__education-list-item">
-										AI for designers course
-									</li>
-									<li class="block-about-me__education-list-item">
-										Best UI practices bootcamp
-									</li>
-									<li class="block-about-me__education-list-item">
-										Cambridge Univeristy - masters degree in UI/UX design
-									</li>
-								</ol>
+							<div class="block-about-me__tab-content" data-block='3'>
+								<div class="block-about-me__progress-bar">
+									<label
+										for="ui-ux"
+										class="block-about-me__progress-label">
+										UI/UX Education
+									</label>
+									<progress
+										id="ui-ux"
+										value="95"
+										max="100"
+										class="block-about-me__progress">
+										95%
+									</progress>
+								</div>
+								<div class="block-about-me__progress-bar">
+									<label
+										for="web-user"
+										class="block-about-me__progress-label">
+										Web & User Interface Design Education
+									</label>
+									<progress
+										id="web-user"
+										value="90"
+										max="100"
+										class="block-about-me__progress">
+										90%
+									</progress>
+								</div>
+								<div class="block-about-me__progress-bar">
+									<label
+										for="animation"
+										class="block-about-me__progress-label">
+										Interaction Design - Education
+									</label>
+									<progress
+										id="animation"
+										value="80"
+										max="100"
+										class="block-about-me__progress">
+										80%
+									</progress>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -290,9 +323,9 @@
 				id="services">
 				<div class="container">
 					<div class="block-services__content">
-						<span class="subtitle">Services</span>
+						<p class="subtitle">Services</p>
 						<div class="block-services__heading-text">
-							<h2>Exploring My Design <span class="important">Skills</span></h2>
+							<h2>Exploring My Design <a href="#" target="_blank" rel="noopener" class="highlighted">Skills</a></h2>
 							<p>
 								We transform your ideas into a distinctive web project that both
 								inspires you and captivates your customers
@@ -300,22 +333,19 @@
 						</div>
 						<div class="block-services__arrows">
 							<button class="arrow arrow--prev">
-								<img
-									src="./images/icons/left-arrow-blue.svg"
-									alt="previous"
-									class="arrow-img" />
+									<svg class="arrow-img"  xmlns="http://www.w3.org/2000/svg" width="27" height="16" viewBox="0 0 27 16" fill="none">
+										<path d="M0.792893 7.29289C0.402369 7.68342 0.402369 8.31658 0.792892 8.7071L7.15685 15.0711C7.54738 15.4616 8.18054 15.4616 8.57107 15.0711C8.96159 14.6805 8.96159 14.0474 8.57107 13.6569L2.91421 8L8.57107 2.34314C8.96159 1.95262 8.96159 1.31946 8.57107 0.928931C8.18054 0.538406 7.54738 0.538406 7.15686 0.92893L0.792893 7.29289ZM26.5 7L14 7L14 9L26.5 9L26.5 7ZM14 7L1.5 7L1.5 9L14 9L14 7Z" fill="#0077FF"/>
+									  </svg>
 							</button>
-							<button class="arrow arrow--next active">
-								<img
-									src="./images/icons/right-arrow-white.svg"
-									alt="next"
-									class="arrow-img" />
+							<button class="arrow arrow--next active-blue-class">
+									<svg class="arrow-img" xmlns="http://www.w3.org/2000/svg" width="27" height="16" viewBox="0 0 27 16" fill="none">
+										<path d="M26.2071 8.70711C26.5976 8.31658 26.5976 7.68342 26.2071 7.29289L19.8431 0.928932C19.4526 0.538408 18.8195 0.538408 18.4289 0.928932C18.0384 1.31946 18.0384 1.95262 18.4289 2.34315L24.0858 8L18.4289 13.6569C18.0384 14.0474 18.0384 14.6805 18.4289 15.0711C18.8195 15.4616 19.4526 15.4616 19.8431 15.0711L26.2071 8.70711ZM0.5 9H13V7H0.5V9ZM13 9H25.5V7H13V9Z" fill="white"/>
+									  </svg>
 							</button>
 						</div>
 						<div class="block-services__service-boxes">
 							<article
-								class="block-services__service-box active"
-								data-slide1
+								class="block-services__service-box active-blue-class"
 								data-slide="1">
 								<figure>
 									<img
@@ -331,13 +361,15 @@
 								<a
 									href="#"
 									target="_self"
-									class="block-services__more block-services__more--active"
-									>Learn more &#8594;</a
+									class="block-services__more active-blue-class"
+									>Learn more <figure class="block-services__arrow-box">
+										<svg class="block-services__arrow" xmlns="http://www.w3.org/2000/svg" width="27" height="16" viewBox="0 0 27 16" fill="none">
+											<path d="M26.2071 8.70711C26.5976 8.31658 26.5976 7.68342 26.2071 7.29289L19.8431 0.928932C19.4526 0.538408 18.8195 0.538408 18.4289 0.928932C18.0384 1.31946 18.0384 1.95262 18.4289 2.34315L24.0858 8L18.4289 13.6569C18.0384 14.0474 18.0384 14.6805 18.4289 15.0711C18.8195 15.4616 19.4526 15.4616 19.8431 15.0711L26.2071 8.70711ZM0.5 9H13V7H0.5V9ZM13 9H25.5V7H13V9Z" fill="white"/>
+										  </svg></figure></a
 								>
 							</article>
 							<article
 								class="block-services__service-box"
-								data-slide2
 								data-slide="2">
 								<figure>
 									<img
@@ -354,12 +386,13 @@
 									href="#"
 									target="_self"
 									class="block-services__more"
-									>Learn more &#8594;</a
+									>Learn more  <figure class="block-services__arrow-box">	<svg class="block-services__arrow" xmlns="http://www.w3.org/2000/svg" width="27" height="16" viewBox="0 0 27 16" fill="none">
+										<path d="M26.2071 8.70711C26.5976 8.31658 26.5976 7.68342 26.2071 7.29289L19.8431 0.928932C19.4526 0.538408 18.8195 0.538408 18.4289 0.928932C18.0384 1.31946 18.0384 1.95262 18.4289 2.34315L24.0858 8L18.4289 13.6569C18.0384 14.0474 18.0384 14.6805 18.4289 15.0711C18.8195 15.4616 19.4526 15.4616 19.8431 15.0711L26.2071 8.70711ZM0.5 9H13V7H0.5V9ZM13 9H25.5V7H13V9Z" fill="#0077ff"/>
+									  </svg></figure></a
 								>
 							</article>
 							<article
 								class="block-services__service-box"
-								data-slide3
 								data-slide="3">
 								<figure>
 									<img
@@ -375,12 +408,13 @@
 									href="#"
 									target="_self"
 									class="block-services__more"
-									>Learn more &#8594;</a
+									>Learn more  <figure class="block-services__arrow-box"><svg class="block-services__arrow" xmlns="http://www.w3.org/2000/svg" width="27" height="16" viewBox="0 0 27 16" fill="none">
+										<path d="M26.2071 8.70711C26.5976 8.31658 26.5976 7.68342 26.2071 7.29289L19.8431 0.928932C19.4526 0.538408 18.8195 0.538408 18.4289 0.928932C18.0384 1.31946 18.0384 1.95262 18.4289 2.34315L24.0858 8L18.4289 13.6569C18.0384 14.0474 18.0384 14.6805 18.4289 15.0711C18.8195 15.4616 19.4526 15.4616 19.8431 15.0711L26.2071 8.70711ZM0.5 9H13V7H0.5V9ZM13 9H25.5V7H13V9Z" fill="#0077ff"/>
+									  </svg></figure></a
 								>
 							</article>
 							<article
 								class="block-services__service-box"
-								data-slide4
 								data-slide="4">
 								<figure>
 									<img
@@ -397,7 +431,9 @@
 									href="#"
 									target="_self"
 									class="block-services__more"
-									>Learn more &#8594;</a
+									>Learn more <figure class="block-services__arrow-box"><svg class="block-services__arrow" xmlns="http://www.w3.org/2000/svg" width="27" height="16" viewBox="0 0 27 16" fill="none">
+										<path d="M26.2071 8.70711C26.5976 8.31658 26.5976 7.68342 26.2071 7.29289L19.8431 0.928932C19.4526 0.538408 18.8195 0.538408 18.4289 0.928932C18.0384 1.31946 18.0384 1.95262 18.4289 2.34315L24.0858 8L18.4289 13.6569C18.0384 14.0474 18.0384 14.6805 18.4289 15.0711C18.8195 15.4616 19.4526 15.4616 19.8431 15.0711L26.2071 8.70711ZM0.5 9H13V7H0.5V9ZM13 9H25.5V7H13V9Z" fill="#0077ff"/>
+									  </svg></figure></a
 								>
 							</article>
 						</div>
@@ -407,31 +443,31 @@
 			<section class="block block-milestones">
 				<div class="container">
 					<div class="block-milestones__content">
-						<span class="subtitle block-milestones__subtitle"
-							>Our Milestones</span
+						<p class="subtitle block-milestones__subtitle"
+							>Our Milestones</p
 						>
 						<h2>What sets our studio apart for your projects?</h2>
 						<div class="block-milestones__milestones-box">
 							<article class="block-milestones__milestone">
-								<h4 data-first-counter>8300<span>+</span></h4>
+								<h4>8300+</h4>
 								<p class="block-milestones__text">
 									Figma ipsum component variant main layer. Hand.
 								</p>
 							</article>
 							<article class="block-milestones__milestone">
-								<h4 data-second-counter>100<span>%</span></h4>
+								<h4>100%</h4>
 								<p class="block-milestones__text">
 									Figma ipsum component variant main layer. Union.
 								</p>
 							</article>
 							<article class="block-milestones__milestone">
-								<h4 data-third-counter>3.5<span>K</span></h4>
+								<h4>3.5K</h4>
 								<p class="block-milestones__text">
 									Figma ipsum component variant main layer.
 								</p>
 							</article>
 							<article class="block-milestones__milestone">
-								<h4 data-fourth-counter>240<span>+</span></h4>
+								<h4>240+</h4>
 								<p class="block-milestones__text">
 									Figma ipsum component variant main layer.
 								</p>
@@ -445,26 +481,26 @@
 				id="blog">
 				<div class="container">
 					<div class="block-projects__content">
-						<span class="subtitle">Our Projects</span>
+						<p class="subtitle">Our Projects</p>
 						<h2>Presenting My Design Portfolio and Case Studies</h2>
 						<div class="block-projects__buttons">
-							<button class="button button--filled block-projects__button">
+							<button class="button button--filled block-projects__button" data-tab="button" data-open="all">
 								All
 							</button>
-							<button class="button block-projects__button">
+							<button class="button block-projects__button" data-tab="button" data-open="4">
 								UI/UX Design
 							</button>
-							<button class="button block-projects__button">
+							<button class="button block-projects__button" data-tab="button" data-open="5">
 								Branding Design
 							</button>
-							<button class="button block-projects__button">Wordpress</button>
+							<button class="button block-projects__button" data-tab="button" data-open="6">Wordpress</button>
 						</div>
 						<div class="block-projects__projects">
 							<a
 								href="blog.worpress.pl"
 								target="_blank"
 								rel="noopener"
-								class="block-projects__blog-link  block-projects__project--wordpress">
+								class="block-projects__blog-link" data-block="6">
 								<figure
 									class="block-projects__project">
 									<img
@@ -477,7 +513,7 @@
 							href="blog.worpress.pl"
 							target="_blank"
 							rel="noopener"
-							class="block-projects__blog-link block-projects__project--brandingdesign">
+							class="block-projects__blog-link" data-block="5">
 							<figure
 								class="block-projects__project">
 								<img
@@ -490,7 +526,7 @@
 							href="blog.worpress.pl"
 							target="_blank"
 							rel="noopener"
-							class="block-projects__blog-link block-projects__project--ui-uxdesign">
+							class="block-projects__blog-link" data-block="4">
 							<figure
 								class="block-projects__project">
 								<img
@@ -503,7 +539,7 @@
 							href="blog.worpress.pl"
 							target="_blank"
 							rel="noopener"
-							class="block-projects__blog-link block-projects__project--brandingdesign">
+							class="block-projects__blog-link" data-block="5">
 							<figure
 								class="block-projects__project">
 								<img
@@ -516,7 +552,7 @@
 							href="blog.worpress.pl"
 							target="_blank"
 							rel="noopener"
-							class="block-projects__blog-link block-projects__project--ui-uxdesign">
+							class="block-projects__blog-link" data-block="4">
 							<figure
 								class="block-projects__project">
 								<img
@@ -529,7 +565,7 @@
 							href="blog.worpress.pl"
 							target="_blank"
 							rel="noopener"
-							class="block-projects__blog-link block-projects__project--brandingdesign">
+							class="block-projects__blog-link" data-block="5">
 							<figure
 								class="block-projects__project">
 								<img
@@ -551,7 +587,7 @@
 				<div class="container">
 					<div class="block-testimonials__content">
 						<div class="block-testimonials__titles">
-							<span class="subtitle">Testimonials</span>
+							<p class="subtitle">Testimonials</p>
 							<h2>The Trust From Clients</h2>
 						</div>
 						<div class="block-testimonials__slider-box">
@@ -564,66 +600,60 @@
 											alt="client Ian Dooley" />
 									</figure>
 									<div class="block-testimonials__stars">
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none" class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
 									</div>
 									<p class="block-testimonials__text">
 										Lorem ipsum dolor sit amet consectetur. Nibh porttitor
@@ -631,12 +661,12 @@
 										in eget neque vestibulum potenti tempus vestibulum potenti
 										tempus
 									</p>
-									<address class="block-testimonials__author">
+									<div class="block-testimonials__author">
 										<p>
 											<span class="block-testimonials__name">Ian Dooley</span
 											>Artist
 										</p>
-									</address>
+									</div>
 								</article>
 								<article class="block-testimonials__opinion-box">
 									<figure class="block-testimonials__person">
@@ -646,79 +676,74 @@
 											alt="client Savannah Nguyen" />
 									</figure>
 									<div class="block-testimonials__stars">
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
 									</div>
 									<p class="block-testimonials__text">
 										Lorem ipsum dolor sit amet consectetur. Nibh porttitor
 										aliquet tellus eget egestas. Enim ultrices dictumst tortor
 										in eget neque vestibulum potenti tempus
 									</p>
-									<address class="block-testimonials__author">
+									<div class="block-testimonials__author">
 										<p>
 											<span class="block-testimonials__name"
 												>Savannah Nguyen</span
 											>President of Sales
 										</p>
-									</address>
+									</div>
 								</article>
 								<article class="block-testimonials__opinion-box">
 									<figure class="block-testimonials__person">
@@ -728,78 +753,73 @@
 											alt="client Jenny Wilson" />
 									</figure>
 									<div class="block-testimonials__stars">
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
 									</div>
 									<p class="block-testimonials__text">
 										Lorem ipsum dolor sit amet consectetur. Tortor odio purus
 										morbi amet. Donec bibendum et cursus felis sollicitudin
 										vulputate cursus odio. Aliquam cursus eu in aliquam nisl
 									</p>
-									<address class="block-testimonials__author">
+									<div class="block-testimonials__author">
 										<p>
 											<span class="block-testimonials__name">Jenny Wilson</span
 											>Medical Assistant
 										</p>
-									</address>
+									</div>
 								</article>
 								<article class="block-testimonials__opinion-box">
 									<figure class="block-testimonials__person">
@@ -809,78 +829,73 @@
 											alt="client Esther Howard" />
 									</figure>
 									<div class="block-testimonials__stars">
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
 									</div>
 									<p class="block-testimonials__text">
 										Lorem ipsum dolor sit amet consectetur. Purus commodo id id
 										ut ultrices aliquam. Sit aliquet leo et lorem dignissim
 										semper donec risus tempor. Varius ultricies dolor ultricies
 									</p>
-									<address class="block-testimonials__author">
+									<div class="block-testimonials__author">
 										<p>
 											<span class="block-testimonials__name">Esther Howard</span
 											>Nursing Assistant
 										</p>
-									</address>
+									</div>
 								</article>
 								<article class="block-testimonials__opinion-box">
 									<figure class="block-testimonials__person">
@@ -890,79 +905,74 @@
 											alt="client Cameron Williamson" />
 									</figure>
 									<div class="block-testimonials__stars">
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
-										<figure class="block-testimonials__star">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												width="27"
 												height="25"
 												viewBox="0 0 27 25"
-												fill="none">
+												fill="none"
+												class="block-testimonials__star">
 												<path
 													d="M11.9259 0.978455C12.5698 -0.326145 14.4301 -0.326158 15.074 0.978455L18.1399 7.19047L24.9952 8.18661C26.4349 8.39582 27.0098 10.1651 25.968 11.1806L21.0074 16.0159L22.1785 22.8437C22.4243 24.2776 20.9193 25.371 19.6316 24.694L13.5 21.4704L7.36836 24.694C6.08065 25.371 4.57561 24.2776 4.82155 22.8437L5.99259 16.0159L1.03199 11.1806C-0.00979716 10.1651 0.565076 8.39582 2.00479 8.18661L8.86017 7.19047L11.9259 0.978455Z"
 													fill="#FFB400" />
 											</svg>
-										</figure>
 									</div>
 									<p class="block-testimonials__text">
 										Lorem ipsum dolor sit amet consectetur. Eu velit tellus
 										pellentesque tincidunt arcu convallis bibendum. Orci diam
 										leo non molestie dictum orci pulvinar massa
 									</p>
-									<address class="block-testimonials__author">
+									<div class="block-testimonials__author">
 										<p>
 											<span class="block-testimonials__name"
 												>Cameron Williamson</span
-											>Cameron Williamson
+											>Marketing Coordinator
 										</p>
-									</address>
+									</div>
 								</article>
 							</div>
 						</div>
@@ -974,7 +984,7 @@
 				id="contact">
 				<div class="container">
 					<div class="block-contact__content">
-						<span class="subtitle block-contact__subtitle">Contact Me</span>
+						<p class="subtitle block-contact__subtitle">Contact Me</p>
 						<h2>Request Free Consultancy</h2>
 						<div class="block-contact__contact-box">
 							<address class="block-contact__contact-details">
@@ -1007,7 +1017,7 @@
 							</address>
 							<form class="block-contact__form" action="index.html" method="post" name="contact-form">
 								<fieldset class="block-contact__identity-inputs">
-									<div class="block-contact__identity-input-box">
+									<div class="block-contact__required-box">
 										<input
 										type="text"
 										name="name"
@@ -1015,9 +1025,9 @@
 										placeholder="Name*"
 										class="block-contact__input"
 										required />
-										<small class="block-contact__error-message" id="name-error"></small>
+										<small class="block-contact__error-message" id="name-error">test message</small>
 									</div>
-									<div class="block-contact__identity-input-box">
+									<div class="block-contact__required-box">
 										<input
 										type="email"
 										name="email"
@@ -1025,7 +1035,7 @@
 										placeholder="Email Address*"
 										class="block-contact__input"
 										required />
-										<small class="block-contact__error-message" id="email-error"></small>
+										<small class="block-contact__error-message" id="email-error">test message</small>
 									</div>
 								</fieldset>
 								<input
@@ -1041,12 +1051,13 @@
 									cols="35"
 									class="block-contact__input"
 									placeholder="How can we help you?"></textarea>
-								<div class="block-contact__checkbox-box">
+								<div class="block-contact__checkbox-box block-contact__required-box">
 									<input
 										type="checkbox"
 										name="conditions"
 										id="conditions"
-										class="block-contact__checkbox" />
+										class="block-contact__checkbox" 
+										required/>
 									<label
 										for="conditions"
 										class="block-contact__checkbox-label">
@@ -1058,10 +1069,12 @@
 											>Terms & Conditons</a
 										>
 									</label>
+									<small class="block-contact__error-message" id="checkbox-error">test message</small>
 								</div>
 								<button class="button block-contact__button" type="submit">
 									Request Now
 								</button>
+								<div class="block-contact__thanks-box"><p>Thank you for your message. I will get back to you as soon as possible.</p></div>
 							</form>
 						</div>
 					</div>
@@ -1076,7 +1089,7 @@
 							href="/"
 							target="_self"
 							class="main-footer__logo">
-							<figure class="main-footer__baloon-box">
+							<figure class="main-footer__logo-image">
 								<img
 									src="./images/icons/air-balloon-blue.svg"
 									alt="baloon"
@@ -1140,8 +1153,5 @@
 				</div>
 			</div>
 		</footer>
-		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 	</body>
 </html>

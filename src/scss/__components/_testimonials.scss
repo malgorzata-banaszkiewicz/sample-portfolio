@@ -16,6 +16,7 @@
 		@include arrowButton();
 		font-size: 0;
 		position: absolute;
+		transition: background-color $default-transition;
 		&:hover {
 			filter: none;
 			background-color: $color-azure-radiance;
@@ -66,10 +67,16 @@
 			height: auto;
 			display: flex;
 		}
+
+		> div {
+			height: 100%;
+		}
 	}
 	.slick-slide.slick-current.slick-active {
-		background-color: $color-azure-radiance;
-		color: $color-white;
+		#{$block}__opinion-box {
+			background-color: $color-azure-radiance;
+			color: $color-white;
+		}
 		address,
 		span {
 			color: $color-white;
@@ -77,8 +84,6 @@
 	}
 	&__content {
 		padding-top: rem(30);
-		@include media(">=lg") {
-		}
 	}
 	&__titles {
 		display: flex;
@@ -116,9 +121,8 @@
 		gap: rem(20);
 		cursor: pointer;
 		transition: border-color $default-transition;
-		&:hover {
-			border-color: $color-azure-radiance;
-		}
+		height: 100%;
+		display: flex !important;
 	}
 	&__person {
 		position: relative;
@@ -156,6 +160,12 @@
 	&__author {
 		color: $color-dove-gray;
 		@include font(16, false, 400);
+		& p {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 	&__name {
 		display: block;

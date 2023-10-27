@@ -58,7 +58,7 @@
 	--alabaster: linear-gradient(#f8f8f8 0 0);
 	padding-bottom: rem(5);
 	background: var(--alabaster), var(--alabaster);
-	background-size: rem(2.5) rem(2.5);
+	background-size: 0 0;
 	background-position: 50% 100%;
 	background-repeat: no-repeat;
 	transition: background-position $default-transition-speed $default-transition,
@@ -101,6 +101,7 @@
 
 @mixin arrowButton() {
 	color: $color-azure-radiance;
+
 	border: rem(1) solid $color-azure-radiance;
 	border-radius: 50%;
 	width: rem(50);
@@ -109,6 +110,9 @@
 	font-size: rem(25);
 	position: relative;
 	@include hover-filter();
+	& svg path {
+		fill: $color-azure-radiance;
+	}
 }
 
 @mixin slickArrow() {
@@ -126,7 +130,7 @@
 	background-position: center;
 }
 
-@mixin baloon() {
+@mixin logo-image-settings() {
 	width: 80%;
 	height: 80%;
 	position: absolute;
