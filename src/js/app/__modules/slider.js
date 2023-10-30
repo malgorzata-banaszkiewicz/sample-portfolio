@@ -42,7 +42,6 @@ const nextSlide = () => {
 		if (activeSlideNumber === totalSlides) {
 			slides.forEach((slide) => {
 				box.style.marginRight = "0";
-				console.log("ostatni slide");
 				let attribute = slide.getAttribute(dataSlide);
 				if (
 					attribute == totalSlides - 2 ||
@@ -95,7 +94,6 @@ const prevSlide = () => {
 			activeSlideNumber = totalSlides;
 			slides.forEach((slide) => {
 				box.style.marginRight = "0";
-				console.log("ostatni slide");
 				let attribute = slide.getAttribute(dataSlide);
 				if (
 					attribute == totalSlides - 2 ||
@@ -109,7 +107,6 @@ const prevSlide = () => {
 			});
 		} else if (activeSlideNumber <= totalSlides - 1 && activeSlideNumber > 2) {
 			box.style.marginRight = margin;
-			console.log("przedostatni slajd");
 			slides.forEach((slide) => {
 				let attribute = slide.getAttribute(dataSlide);
 				let number = desktopSlides ? -2 : null;
@@ -126,7 +123,6 @@ const prevSlide = () => {
 			});
 		} else if (activeSlideNumber === 2) {
 			box.style.marginRight = margin;
-			("drugi slajd");
 			slides.forEach((slide) => {
 				let attribute = slide.getAttribute(dataSlide);
 				let number = desktopSlides ? 2 : null;
@@ -162,32 +158,30 @@ const mobileView = () => {
 
 export const sliderOnResize = (e) => {
 	if (!slides.length) {
-		console.log(slides);
 		return null;
-	} else {
-		activateSlider(1);
-		activeSlideNumber = 1;
-		if (e.currentTarget.innerWidth > breakpoint) {
-			box.style.marginRight = "-230px";
-			slides.forEach((slide) => {
-				let attribute = slide.getAttribute(dataSlide);
-				if (attribute <= 4) {
-					slide.style.display = "flex";
-				} else {
-					slide.style.display = "none";
-				}
-			});
-		} else if (e.currentTarget.innerWidth < breakpoint) {
-			box.style.marginRight = "0";
-			slides.forEach((slide) => {
-				let attribute = slide.getAttribute(dataSlide);
-				if (attribute <= 3) {
-					slide.style.display = "flex";
-				} else {
-					slide.style.display = "none";
-				}
-			});
-		}
+	}
+	activateSlider(1);
+	activeSlideNumber = 1;
+	if (e.currentTarget.innerWidth > breakpoint) {
+		box.style.marginRight = "-230px";
+		slides.forEach((slide) => {
+			let attribute = slide.getAttribute(dataSlide);
+			if (attribute <= 4) {
+				slide.style.display = "flex";
+			} else {
+				slide.style.display = "none";
+			}
+		});
+	} else if (e.currentTarget.innerWidth < breakpoint) {
+		box.style.marginRight = "0";
+		slides.forEach((slide) => {
+			let attribute = slide.getAttribute(dataSlide);
+			if (attribute <= 3) {
+				slide.style.display = "flex";
+			} else {
+				slide.style.display = "none";
+			}
+		});
 	}
 };
 
@@ -196,10 +190,9 @@ export const sliderArrows = (e) => {
 		let arrows = document.querySelector(".block-services__arrows");
 		arrows.style.display = "none";
 		return null;
-	} else {
-		mobileView();
-		nextSlide();
-		prevSlide();
-		sliderOnResize(e);
 	}
+	mobileView();
+	nextSlide();
+	prevSlide();
+	sliderOnResize(e);
 };

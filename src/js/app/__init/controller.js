@@ -1,6 +1,6 @@
 import { headerChanges, headerOnResize } from "../__modules/mobile-menu";
 import { InitializeMovingTitles } from "../__modules/title-animation";
-import { slickSlider } from "../__modules/slick-slider";
+import { slickSlider, slickArrows } from "../__modules/slick-slider";
 import { countersOnScroll } from "../__modules/milestones";
 import { checkboxChecked, checkboxHover } from "../__modules/contact-form";
 import { smoothAnchor } from "../__modules/smoothAnchor";
@@ -20,6 +20,7 @@ const controller = {
 		smoothAnchor(e);
 		tabs();
 		sliderArrows(e);
+		slickArrows();
 	},
 	resized(e) {
 		headerOnResize(e);

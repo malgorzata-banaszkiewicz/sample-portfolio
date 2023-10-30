@@ -8,44 +8,47 @@
 	}
 	.slick-track {
 		display: flex;
-		@include media("<md") {
-			margin: 0 rem(16);
-		}
+		margin: 0;
 	}
 	.slick-arrow {
 		@include arrowButton();
 		font-size: 0;
 		position: absolute;
-		transition: background-color $default-transition;
-		&:hover {
-			filter: none;
-			background-color: $color-azure-radiance;
-		}
 
 		&.slick-next {
-			left: calc(47% + rem(70));
+			left: calc(40% + rem(60));
 			top: rem(-50);
 			display: block;
+			@include media("<xs") {
+				left: calc(30% + rem(60));
+			}
+			@include media(">=lg") {
+				left: calc(43% + rem(60));
+			}
+			@include media(">=xxl") {
+				left: calc(45% + rem(60));
+			}
 		}
 
 		&.slick-prev {
-			left: 47%;
+			left: 40%;
 			top: rem(-50);
+			@include media("<xs") {
+				left: 30%;
+			}
+			@include media(">=lg") {
+				left: 43%;
+			}
+			@include media(">=xxl") {
+				left: 45%;
+			}
 		}
 	}
-	.slick-next::before {
-		@include slickArrow();
-		background-image: url("../images/icons/right-arrow-blue.svg");
-	}
-	.slick-next:hover::before {
-		background-image: url("../images/icons/right-arrow-white.svg");
-	}
-	.slick-prev::before {
-		@include slickArrow();
-		background-image: url("../images/icons/left-arrow-blue.svg");
-	}
-	.slick-prev:hover::before {
-		background-image: url("../images/icons/left-arrow-white.svg");
+	.slick-next,
+	.slick-prev {
+		&::before {
+			@include slickArrow();
+		}
 	}
 	.slick-next:active::before {
 		width: rem(40);
@@ -61,7 +64,7 @@
 	}
 
 	.slick-slide {
-		margin: 0 rem(16);
+		margin-right: rem(30);
 		@include media("<md") {
 			width: rem(297);
 			height: auto;
@@ -72,16 +75,7 @@
 			height: 100%;
 		}
 	}
-	.slick-slide.slick-current.slick-active {
-		#{$block}__opinion-box {
-			background-color: $color-azure-radiance;
-			color: $color-white;
-		}
-		address,
-		span {
-			color: $color-white;
-		}
-	}
+
 	&__content {
 		padding-top: rem(30);
 	}

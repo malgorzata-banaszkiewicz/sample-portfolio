@@ -9,19 +9,37 @@
 	top: 15%;
 	left: 18%;
 }
-
-.active-blue-class {
-	background-color: $color-azure-radiance;
-	color: $color-white;
-	z-index: 1;
-	fill: $color-white;
-	h3 {
+.active-slick-slide {
+	.block-testimonials__opinion-box {
+		background-color: $color-azure-radiance;
 		color: $color-white;
+	}
+	address,
+	span,
+	p {
+		color: $color-white;
+	}
+}
+.active-blue-class {
+	background-color: $color-azure-radiance !important;
+	color: $color-white !important;
+	z-index: 1 !important;
+	fill: $color-white !important;
+	h3 {
+		color: $color-white !important;
 	}
 	.block-services__more {
-		color: $color-white;
+		color: $color-white !important;
 	}
 	& svg path {
-		fill: $color-white;
+		fill: $color-white !important;
+	}
+}
+
+.disabled {
+	pointer-events: none;
+	background-color: $color-white !important;
+	& svg path {
+		fill: $color-azure-radiance !important;
 	}
 }
